@@ -72,5 +72,5 @@ This project enhances your:
 ---
 
 <p align="center">
-  <img src="assets/qr_code.png" alt="QR Code" width="200"/>
+  <img src="assets/AR_Code.png" alt="QR Code" width="200"/>
 </p>
