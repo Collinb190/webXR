@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple AR Example</title>
+  <!-- A-Frame Library -->
+  <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
+  <!-- AR.js Library -->
+  <script src="https://raw.githack.com/AR-js-org/AR.js/dev/aframe/build/aframe-ar.js"></script>
+  <!-- AR Custom Script -->
+  <script src="scriptAR.js" defer></script>
+  <!-- Simple Styling -->
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+    }
+  </style>
+</head>
+<body>
+  <!-- AR Scene -->
+  <a-scene
+    cursor="rayOrigin: mouse"
+    raycaster="objects: .clickable"
+    vr-mode-ui="enabled: false"
+    embedded
+    arjs="sourceType: webcam; debugUIEnabled: false">
+
+    <!-- Preload Assets -->
+    <a-assets>
+      <img id="githubIcon" src="assets/github.png" alt="GitHub Icon">
+      <img id="youtubeIcon" src="assets/youtube.png" alt="YouTube Icon">
+      <img id="emailIcon" src="assets/email.png" alt="Email Icon">
+      <img id="linkedinIcon" src="assets/linkedin.png" alt="LinkedIn Icon">
+    </a-assets>
+    
+    <!-- Add a Small Cube -->
+    <a-box 
+      id="rotatingCube"
+      position="0 -1.75 -5" 
+      rotation="0 45 0" 
+      scale="0.75 0.75 0.75" 
+      color="#4cbf99">
+    </a-box>
+    
+    <!-- Card Text -->
+    <a-text 
+      value="Collin Ballard" 
+      position="0 0.2 -5" 
+      color="white" 
+      align="center" 
+      scale="1.5 1.5 1.5">
+    </a-text>
+    
+    <a-text 
+      value="Software Developer" 
+      position="0 -0.15 -5" 
+      color="white" 
+      align="center" 
+      scale="1 1 1">
+    </a-text>
+    
+    <a-text 
+      value="Web - XR - Game" 
+      position="0 -0.45 -5" 
+      color="white" 
+      align="center" 
+      scale="0.75 0.75 0.75">
+    </a-text>
+    
+    <a-text 
+      value="(903)754-8490" 
+      position="0 -0.75 -5" 
+      color="white" 
+      align="center" 
+      scale="0.75 0.75 0.75">
+    </a-text>
+    
+    <!-- Add Plane for Text Background -->
+    <a-plane 
+      position="0 -.5 -10" 
+      rotation="0 0 0" 
+      width="6" 
+      height="3" 
+      color="black" 
+      opacity="0.3">
+    </a-plane>
+
+    <!-- Social Media Icons -->
+    <a-image 
+      id="github"
+      src="#githubIcon"
+      position="-1.5 1.15 -5" 
+      scale="0.75 0.75 0.75"
+      class="clickable">
+    </a-image>
+
+    <a-image 
+      id="youtube"
+      src="#youtubeIcon"
+      position="-0.5 1.15 -5" 
+      scale="0.75 0.75 0.75"
+      class="clickable">
+    </a-image>
+
+    <a-image 
+      id="email"
+      src="#emailIcon"
+      position="0.5 1.15 -5" 
+      scale="0.75 0.75 0.75"
+      class="clickable">
+    </a-image>
+
+    <a-image 
+      id="linkedin"
+      src="#linkedinIcon"
+      position="1.5 1.15 -5" 
+      scale="0.75 0.75 0.75"
+      class="clickable">
+    </a-image>
+
+    <!-- AR Camera -->
+    <a-camera 
+      position="0 0 0" 
+      look-controls 
+      fov="60" 
+      near="0.01" 
+      far="1000">
+    </a-camera>
+  </a-scene>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Function to add click listeners
+      function addIconClickListener(selector, url) {
+        const icon = document.querySelector(selector);
+        if (icon) {
+          icon.addEventListener('click', () => {
+            console.log(`Opening URL: ${url}`);
+            window.open(url, '_blank');
+          });
+        } else {
+          console.error(`Icon not found for selector: ${selector}`);
+        }
+      }
+
+      // Add click listeners to all icons
+      addIconClickListener('#github', 'https://github.com/Collinb190');
+      addIconClickListener('#youtube', 'https://youtube.com/@lin.256');
+      addIconClickListener('#email', 'mailto:collinb190@gmail.com');
+      addIconClickListener('#linkedin', 'https://linkedin.com/in/collin-ballard/');
+    });
+  </script>
+</body>
+</html>
