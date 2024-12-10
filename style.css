@@ -33,28 +33,28 @@ body {
   font-weight: bold;
   margin: 0;
   text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
-  color: #4cbf99;
+  color: #4cbf99; /* Light teal */
 }
 
-#intro p:nth-child(2) {
+#intro p:nth-of-type(1) {
   font-size: 1.25rem;
   margin: 0.5rem;
   text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
-  color: #2f6ba3;
+  color: #2f6ba3; /* Blue */
 }
 
-#intro p:nth-child(3) {
+#intro p:nth-of-type(2) {
   font-size: 1.25rem;
   margin: 0.5rem;
   text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
-  color: #d94c46; 
+  color: #d94c46; /* Red */
 }
 
-#intro p:nth-child(4) {
+#intro p:nth-of-type(3) {
   font-size: 1.25rem;
   margin: 0.5rem;
   text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
-  color: #c0c94d;
+  color: #c0c94d; /* Yellow */
 }
 
 /* Button Styles */
