@@ -36,21 +36,21 @@ body {
   color: #4cbf99;
 }
 
-#intro p:nth-child(1) {
+#intro p:nth-child(2) {
   font-size: 1.25rem;
   margin: 0.5rem;
   text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
   color: #2f6ba3;
 }
 
-#intro p:nth-child(2) {
+#intro p:nth-child(3) {
   font-size: 1.25rem;
   margin: 0.5rem;
   text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
   color: #d94c46; 
 }
 
-#intro p:nth-child(3) {
+#intro p:nth-child(4) {
   font-size: 1.25rem;
   margin: 0.5rem;
   text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
